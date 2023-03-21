@@ -10,19 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
   </head>
-
   <body>
-    
     <header>
-
       <div class="topnav" id="myTopnav">
         <div class="header-logo">
           <img alt="logo" src="logo.png" width="auto" height="auto" />
         </div>
-
         <div class="main-navbar">
           <a href="#" class="active"><span>Accueil</span></a>
           <a href="#"><span>Détails de l'évènement</span></a>
@@ -59,27 +54,27 @@
               <div class="formData">
                 <label for="firstname">Prénom</label><br>
                 <input class="text-control" type="text" id="firstname" name="firstname" minlength="2" required /><br>
-                <p class="errormsg hide-error"></p>
+                <div class="error-message" id="firstname-error"></div>
               </div>
               <div class="formData">
                 <label for="lastname">Nom</label><br>
                 <input class="text-control" type="text" id="lastname" name="lastname" minlength="2" required /><br>
-                <p class="errormsg hide-error"></p>
+                <div class="error-message" id="lastname-error"></div>
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br>
                 <input class="text-control" type="email" id="email" name="email" required /><br>
-                <p class="errormsg hide-error"></p>
+                <div class="error-message" id="email-error"></div>
               </div>
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
                 <input class="text-control" type="date" id="birthdate" name="birthdate" min="1950-01-01" required /><br>
-                <p class="errormsg hide-error"></p>
+                <div class="error-message" id="birthdate-error"></div>
               </div>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" value="0" min="0" max="99" required><br>
-                <p class="errormsg hide-error"></p>
+                <div class="error-message" id="quantity-error"></div>
               </div>
               <div class="formData locationlist">
                 <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -96,11 +91,11 @@
                 <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
                 <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span>Portland</label>
                 <br>
-                <p class="location-errormsg hide-error"></p>
+                <div class="error-message" id="location-error"></div>
               </div>
               <div class="formData">
-                <input class="checkbox-input" type="checkbox" id="tos" name="tos" required />
-                <label class="checkbox2-label" for="tos" required>
+                <input class="checkbox-input" type="checkbox" id="tos" name="tos" checked />
+                <label class="checkbox2-label" for="tos">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -112,9 +107,9 @@
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
-              </div>
+              </div>              
               <br>
-              <input class="button btn-submit" type="submit" value="C'est parti" />
+              <input class="button btn-submit" type="submit" value="C'est parti"/>
             </form>
             <div class="formok hide-element">
               <p class="formok-message">Merci pour<br> votre inscription</p>

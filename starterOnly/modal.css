@@ -585,3 +585,14 @@ footer {
     opacity: 1;
   }
 }
+/* error msg JS*/
+
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
