@@ -23,6 +23,8 @@ const quantity = document.querySelector("#quantity");
 const locationList = document.querySelectorAll(".locationlist input[type=radio]");
 const tosCheckbox = document.querySelector("#tos");
 const newsCheckbox = document.querySelector("#news");
+const closeButton = document.querySelector(".btn-close");
+
 
 // Fonction de validation du formulaire
 function validate() {
@@ -99,17 +101,6 @@ function emailIsValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function showConfirmation() {
-  var modalbg = document.querySelector(".bground");
-  var form = document.querySelector("#form");
-  var formok = document.querySelector(".formok");
-
-  form.classList.add("hide-element");
-  formok.classList.remove("hide-element");
-  formok.classList.add("show");
-  modalbg.classList.remove("noscroll");
-}
-
 // Événement submit pour le formulaire
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // Empêche l'envoi du formulaire par défaut
@@ -134,10 +125,31 @@ form.addEventListener("submit", function (e) {
   }
   }
 
+  function showConfirmation() {
+    var modalbg = document.querySelector(".bground");
+    var form = document.querySelector("#form");
+    var formok = document.querySelector(".formok");
+  
+    form.classList.add("hide-element");
+    formok.classList.remove("hide-element");
+    formok.classList.add("show");
+    modalbg.classList.remove("noscroll");
+
+  // Bouton de fermeture du message de confirmation
+  confirmationButton.addEventListener("click", function() {
+    modalbg.style.display = "none";
+});
+
+  }
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  
+  // Bouton de fermeture de la modal
+  closeButton.addEventListener("click", function() {
+    modalbg.style.display = "none";
+  });
 }
