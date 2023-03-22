@@ -83,10 +83,12 @@ if (isNaN(quantity.value) || quantity.value < 0) {
   document.querySelector("#quantity-error").innerHTML = "";
   quantity.classList.remove("error-input");
 }
-
+//si l'utilisateur a sélectionné une ville dans le formulaire. Elle commence par initialiser une variable "locationChecked" à "false"
+//lle utilise une boucle "for" pour parcourir tous les boutons radio associés aux villes dans le formulaire, 
+//qui sont stockés dans la variable "locationList".
 // Validation de la sélection de la ville
 let locationChecked = false;
-for (let i = 0; i < locationList.length; i++) {
+for (let i = 0; i < locationList.length; i++) {//utilise une boucle "for" pour parcourir tous les boutons associés aux villes dans le formulaire, 
   if (locationList[i].checked) {
     locationChecked = true;
     break;
@@ -100,6 +102,8 @@ if (!locationChecked) {
 }
 
 // Validation de l'acceptation des conditions générales
+//vérifie si l'utilisateur a accepté les termes et conditions du formulaire
+//utilise la propriété "checked" pour vérifier si la case à cocher associée aux termes et conditions est cochée ou non. 
 if (!tosCheckbox.checked) {
   document.querySelector(".errormsg").innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
   isValid = false;
@@ -117,7 +121,7 @@ function emailIsValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Événement submit pour le formulaire
+//utilise la méthode "addEventListener" pour écouter l'événement "submit"
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // Empêche l'envoi du formulaire par défaut
   var isFormValid = validate(); // Vérifie la validité du formulaire
@@ -128,8 +132,9 @@ form.addEventListener("submit", function (e) {
   });
   
   // Fonction pour réinitialiser le formulaire après soumission réussie
+  //fonction nommée "resetForm()", qui permet de réinitialiser le formulaire après une soumission réussie.
   function resetForm() {
-  var form = document.querySelector("#form");
+  var form = document.querySelector("#form");//sélectionne l'élément HTML correspondant au formulaire, en utilisant la méthode "querySelector"
   form.reset(); // Réinitialise les champs du formulaire
   var errorMessages = document.querySelectorAll(".error-message");
   for (var i = 0; i < errorMessages.length; i++) {
