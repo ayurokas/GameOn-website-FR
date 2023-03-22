@@ -586,13 +586,33 @@ footer {
   }
 }
 /* error msg JS*/
-
-.error {
-  border: 2px solid red;
-}
-
 .error-message {
   color: red;
   font-size: 0.8rem;
   margin-top: 0.5rem;
+}
+.formok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formok-message {
+  font-size: 1.5em;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formok-close {
+  width: 50%;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.hide-element {
+  display: none;
 }
