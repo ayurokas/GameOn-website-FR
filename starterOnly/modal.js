@@ -1,4 +1,5 @@
 function editNav() {
+  console.log("La fonction editNav a été appelée"); // Ajout d'un console log pour suivre l'exécution de la fonction
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -30,6 +31,7 @@ const closeButton = document.querySelector(".btn-close");// le bouton "Fermer" d
 //parcourt chaque champ du formulaire, vérifie si les données saisies sont valides 
 //met à jour les messages d'erreur et les styles CSS correspondants en conséquence.
 function validate() {
+  console.log("La fonction validate a été appelée"); // Ajout d'un console log pour suivre l'exécution de la fonction
   let isValid = true; //variable stocke l'état de la validation du formulaire, qui est initialisée à "true" car le formulaire n'a pas encore été validé.
 
   // varifie si le champ du prénom est valide 
@@ -112,7 +114,7 @@ if (!tosCheckbox.checked) {
   document.querySelector(".errormsg").innerHTML = "";
   tosCheckbox.classList.remove("error-input");
 }
-
+console.log("La fonction validate a terminé son exécution avec isValid = " + isValid); // Ajout d'un console log pour suivre l'exécution de la fonction
   return isValid;
 }
 
@@ -124,7 +126,9 @@ function emailIsValid(email) {
 //utilise la méthode "addEventListener" pour écouter l'événement "submit"
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // Empêche l'envoi du formulaire par défaut
+  console.log("Le formulaire a été soumis"); // Ajout d'un console log pour suivre l'exécution de la fonction
   var isFormValid = validate(); // Vérifie la validité du formulaire
+  console.log("Le formulaire est " + (isFormValid ? "valide" : "invalide")); // Ajout d'un console log pour suivre l'exécution de la fonction
   if (isFormValid) {
   showConfirmation(); // Affiche le message de confirmation
   resetForm(); // Réinitialise le formulaire
@@ -134,6 +138,7 @@ form.addEventListener("submit", function (e) {
   // Fonction pour réinitialiser le formulaire après soumission réussie
   //fonction nommée "resetForm()", qui permet de réinitialiser le formulaire après une soumission réussie.
   function resetForm() {
+  console.log("Réinitialisation du formulaire"); // Ajout d'un console log pour suivre l'exécution de la fonction
   var form = document.querySelector("#form");//sélectionne l'élément HTML correspondant au formulaire, en utilisant la méthode "querySelector"
   form.reset(); // Réinitialise les champs du formulaire
   var errorMessages = document.querySelectorAll(".error-message");
@@ -147,6 +152,7 @@ form.addEventListener("submit", function (e) {
   }
 
   function showConfirmation() {
+    console.log("Affichage du message de confirmation"); // Ajout d'un console log pour suivre l'exécution de la fonction
     var modalbg = document.querySelector(".bground");
     var form = document.querySelector("#form");
     var formok = document.querySelector(".formok");
@@ -154,13 +160,11 @@ form.addEventListener("submit", function (e) {
     form.classList.add("hide-element");
     formok.classList.remove("hide-element");
     formok.classList.add("show");
-    modalbg.classList.remove("noscroll");
-
-  // Bouton de fermeture du message de confirmation
-  confirmationButton.addEventListener("click", function() {
-    modalbg.style.display = "none";
-});
-
+  
+    // Bouton de fermeture du message de confirmation
+    confirmationButton.addEventListener("click", function() {
+      modalbg.style.display = "none";
+    });
   }
 
 // launch modal event

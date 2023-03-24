@@ -590,7 +590,7 @@ footer {
   border: 2px solid red;
 }
 .error-message {
-  color: red;
+  color:#FF4E60;
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
