@@ -1,18 +1,13 @@
 function editNav() {
-  console.log("La fonction editNav a été appelée"); // Ajout d'un console log pour suivre l'exécution de la fonction
-  // Récupère l'élément HTML avec l'ID "myTopnav"
+  console.log("La fonction editNav a été appelée");
   var x = document.getElementById("myTopnav");
-  // Vérifie si l'élément a une classe "topnav"
   if (x.className === "topnav") {
-    // Ajoute la classe "responsive" si elle n'est pas déjà présente
     x.className += " responsive";
   } else {
-    // Retire la classe "responsive" si elle est déjà présente
     x.className = "topnav";
   }
 }
 
-// DOM Elements
 // "DOM Elements" est utilisée pour sélectionner et stocker des éléments HTML spécifiques dans des variables
 // Cela permet d'accéder facilement aux éléments du formulaire HTML/css à partir du code JavaScript.
 const modalbg = document.querySelector(".bground"); 
@@ -102,7 +97,6 @@ if (!locationChecked) {
 
 // Validation de l'acceptation des conditions générales
 //vérifie si l'utilisateur a accepté les termes et conditions du formulaire
-//utilise la propriété "checked" pour vérifier si la case à cocher associée aux termes et conditions est cochée ou non. 
 if (!tosCheckbox.checked) {
   document.querySelector("#tos-error").innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
   isValid = false;
@@ -132,15 +126,14 @@ form.addEventListener("submit", function (e) {
   }
   });
   
-  // Fonction pour réinitialiser le formulaire après soumission réussie
   //fonction nommée "resetForm()", qui permet de réinitialiser le formulaire après une soumission réussie.
   function resetForm() {
   console.log("Réinitialisation du formulaire");
-  var form = document.querySelector("#form");//sélectionne l'élément HTML correspondant au formulaire, en utilisant la méthode "querySelector"
+  var form = document.querySelector("#form");
   form.reset(); // Réinitialise les champs du formulaire
   var errorMessages = document.querySelectorAll(".error-message");
   for (var i = 0; i < errorMessages.length; i++) {
-  errorMessages[i].textContent = ""; // Efface les messages d'erreur
+  errorMessages[i].textContent = "";
   }
   var checkboxes = document.querySelectorAll(".checkbox-input");
   for (var i = 0; i < checkboxes.length; i++) {
@@ -150,11 +143,9 @@ form.addEventListener("submit", function (e) {
 
   function showConfirmation() {
     console.log("Affichage du message de confirmation");
-    //récupérer l'élément HTML correspondant au message de confirmation en utilisant sa classe CSS
     var modalbg = document.querySelector(".bground");
     var form = document.querySelector("#form");
     var messageok = document.querySelector(".messageok");
-    //appliquent des styles CSS pour masquer le formulaire et afficher le message de confirmation
     form.classList.add("hide-element");
     messageok.classList.remove("hide-element");
     messageok.classList.add("show");
@@ -162,6 +153,10 @@ form.addEventListener("submit", function (e) {
     resetForm();
     // Bouton de fermeture du message de confirmation
     confirmationButton.addEventListener("click", function() {
+      // masquer le message de confirmation et réafficher le formulaire
+      form.classList.remove("hide-element");
+      messageok.classList.remove("show");
+      messageok.classList.add("hide-element");
       modalbg.style.display = "none";
     });
   }
@@ -176,5 +171,3 @@ function launchModal() {
     modalbg.style.display = "none";
   });
 }
-
-  //* "trim" est utilisé pour supprimer les espaces blancs au début et à la fin de la valeur de la variable 
