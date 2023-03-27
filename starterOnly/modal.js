@@ -72,14 +72,15 @@ if (!birthdate.value) {
 }
 
 // Validation du nombre de concours
-if (isNaN(quantity.value) || quantity.value === "" || quantity.value < 0) {
-  document.querySelector("#quantity-error").innerHTML = "Vous devez entrer une valeur numérique pour le nombre de concours.";
+if (isNaN(quantity.value) || quantity.value === "" || quantity.value < 0 || quantity.value > 99) {
+  document.querySelector("#quantity-error").innerHTML = "Vous devez entrer une valeur numérique entre 0 et 99 pour le nombre de concours.";
   isValid = false;
   quantity.classList.add("error-input");
 } else {
   document.querySelector("#quantity-error").innerHTML = "";
   quantity.classList.remove("error-input");
 }
+
 // Validation de la sélection de la ville
 let locationChecked = false;
 for (let i = 0; i < locationList.length; i++) {//utilise une boucle "for" pour parcourir tous les boutons associés aux villes dans le formulaire, 
@@ -113,6 +114,10 @@ function emailIsValid(email) {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regex.test(email);
 }
+
+quantity.addEventListener("input", function() {
+  this.value = this.value.replace(/[^0-9]/g, "");
+});
 
 //utilise la méthode "addEventListener" pour écouter l'événement "submit"
 form.addEventListener("submit", function (e) {
