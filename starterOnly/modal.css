@@ -249,6 +249,7 @@ input {
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
+
 }
 .formData[data-error-visible="true"]::after {
   opacity: 1;
@@ -592,14 +593,17 @@ footer {
 .error-message {
   color:#FF4E60;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-.formok {
+  margin-top: 0.1rem;
+ }
+
+
+/* close msg JS*/
+.messageok {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.formok-message {
+.messageok-message {
   font-size: 1.5em;
   text-align: center;
   min-height: 500px;
@@ -608,7 +612,7 @@ footer {
   justify-content: center;
 }
 
-.formok-close {
+.messageok-close {
   width: 50%;
 }
 

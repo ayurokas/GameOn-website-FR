@@ -20,7 +20,7 @@
           <a href="#"><span>À propos</span></a>
           <a href="#"><span>Contact</span></a>
           <a href="#"><span>Évènements passés</span></a>
-          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <a href="jaevascript:void(0);" class="icon" onclick="ditNav()">
             <i class="fa fa-bars"></i>
           </a>
         </div>
@@ -92,9 +92,10 @@
                 <div class="formData">
                   <input class="checkbox-input" type="checkbox" id="tos" name="tos" checked />
                   <label class="checkbox2-label" for="tos">
-                  <span class="checkbox-icon"></span>
+                      <span class="checkbox-icon"></span>
                       J'ai lu et accepté les conditions d'utilisation.
                   </label>
+                  <div class="error-message" id="tos-error"></div>
                 <br>
                   <p class="errormsg hide-error"></p>
                   <input class="checkbox-input" type="checkbox" id="news" name="news" />
@@ -107,9 +108,9 @@
                 <br>
                 <input class="button btn-submit" type="submit" value="C'est parti"/>
             </form>
-            <div class="formok hide-element">
-              <p class="formok-message">Merci pour votre inscription</p>
-              <button class="btn-signup modal-btn formok-close" type="button">Fermer</button>
+            <div class="messageok hide-element">
+              <p class="messageok-message">Merci pour votre inscription</p>
+              <button class="btn-signup modal-btn messageok-close" type="button">Fermer</button>
             </div>
           </div>
         </div>
