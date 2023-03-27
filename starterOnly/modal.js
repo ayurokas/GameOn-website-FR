@@ -116,8 +116,8 @@ console.log("La fonction validate a terminé son exécution avec isValid = " + i
 }
 
 function emailIsValid(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email) && !/[<>()[\]\\.,;:\s@"]/.test(email);
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
 }
 
 //utilise la méthode "addEventListener" pour écouter l'événement "submit"
